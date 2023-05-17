@@ -15,8 +15,8 @@ const GameBoard = () => {
          initGame();
      },[])
      const initGame = () => {
-          setGameBoard(Array(16).fill(NO_PLAYER));
           setCurrentPlayer(PLAYER_1); 
+          setGameBoard(Array(NO_CIRCLES).fill(NO_PLAYER));
           setGameState(GAME_STATE_PLAYING);
      }
      const initBoard = () => {
@@ -63,7 +63,7 @@ const GameBoard = () => {
           <div className = "gameBoard" >
               {initBoard()}
           </div>
-          <Footer onNewGameClick={initGame} onSuggestClick={suggestMove}/>
+          <Footer onNewGameClick={initGame} onSuggestClick={suggestMove}  gameState = {gameState}/>
           </>
      )
      };
